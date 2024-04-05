@@ -5,30 +5,28 @@
 }
 html{
     font-size: 14px;
+    height: 690px;
+    overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-x: hidden;
     background-image: url(/image/background1.jpg);
     background-size: cover;
     position:relative;
 }
 a{text-decoration: none;color: aliceblue;}
 li{list-style: none;}
-body{
+main{
     position: relative;
     top: 20px;
     left: 20px;
     width: 1285px;
     height: 650px;
-    background-color:#1d0b3143;
+    background-color:#1d0b3151;
     border-radius: 5px;
-}
-main{
     display: flex;
 }
 .section1{
     width: 185px;
     border-right: 1px solid #2D142A;
-    overflow: hidden;
 }
 .section1 .logo a{
     background-image: linear-gradient(to right, red, blue);
@@ -57,7 +55,7 @@ main{
 
 .section2{
     width: 1100px;
-    height: 650px;
+    height: 2050px;
 }
 .section2 .header{
     width: 1100px;
@@ -112,29 +110,70 @@ input:focus{outline: none;}
 
 
 /* Home */
-.home{
-    width: 1100px;
+.main::-webkit-scrollbar{
+    width: 5px;
 }
-.home .home2{
+.main{
+    width: 1100px;
+    overflow: auto;
+    height: 600px;
+    overflow-x: hidden;
+}
+.main .home{
+    width: 1100px;
+    height: 2000px;
+}
+.main .home .home2{
     width: 1100px;
     height: 315px;
 }
-.home .home2 .title{
+.main .home .home2 .title{
     color: white;
     margin: 10px 10px 10px 15px;
 }
-.home .home2 .slide{
+.main .home .home2 .slide{
     display: flex;
     justify-content: space-evenly;
 }
-.home .home2 .slide .item{
+.main .home .home2 .slide .item{
     width: 200px;
     height: 260px;
     border-radius: 5px;
     border: 1px solid #2D142A;
 }
-.home .home2 .slide .item img{
+.main .home .home2 .slide .item img{
     width: 200px;
     height: 260px;
     border-radius: 5px;
 }
+
+
+
+
+
+
+/* Thanh Phát nhạc */
+.play-music1{
+    position: fixed;
+    bottom: 1px;
+    width: 1276px;
+    margin-left: 26px;
+    height: 70px;
+    border-radius: 10px;
+    background-color: #682189;
+    filter: blur(3px);
+    
+}
+.play-music{
+    position: fixed;
+    bottom: 1px;
+    width: 1270px;
+    margin-left: 30px;
+    height: 70px;
+    border-radius: 10px;
+    
+}
+.play-music .music{}
+.play-music .stop{}
+.play-music .play{}
+.play-music .voice{}
