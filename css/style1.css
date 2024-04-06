@@ -121,7 +121,7 @@ input:focus{outline: none;}
 }
 .main .home{
     width: 1100px;
-    height: 2000px;
+    height: 2280px;
 }
 .main .home .home2{
     width: 1100px;
@@ -243,16 +243,18 @@ input:focus{outline: none;}
     margin-top: 4px;
     width: 350px;
     height: 65px;
-    display: flex;
+    display:flex;
     align-items: center;
-    justify-content: space-evenly;
 }
-.play-music .stop ul li a{
+audio{
+    display: none !important;
+}
+.play-music .stop > ul > li{padding: 0 25px;}
+.play-music .stop > ul > li  a{
     color: rgba(255, 255, 255, 0.617);
     font-size: 16px;
     padding: 0 5px;
 }
-.on{opacity: 1;}
-.off{opacity: 0;}
+.off{display: none;}
 .play-music .play{}
 .play-music .voice{}
