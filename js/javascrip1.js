@@ -17,11 +17,16 @@ var audioSource = document.getElementById("audio");
 for (var i = 0; i < musicImgs.length; i++) {
     musicImgs[i].addEventListener("click", function() {
         var musicId = this.id;
-        audioSource.src = "mp4/" + musicId + ".mp3";
+        audioSource.src = "mp3/" + musicId + ".mp3";
         var audioPlayer = document.querySelector("#audio");
-        // document.querySelector("#on").classList.add("off");
-        // document.querySelector("#off").classList.add("off");
         audioPlayer.load();
         audioPlayer.play();
+        document.getElementById("imgplay").src = "image/" + musicId + ".png";
+        let test1 = document.getElementById("on");
+        if(test1.classList == "fas fa-play")
+            {
+                test1.classList.add("off");
+                document.getElementById("off").classList.remove("off");
+        }
     });
 }
