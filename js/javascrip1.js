@@ -12,3 +12,16 @@ offlistion.addEventListener("click",() => {
     let audio = document.querySelector("#audio");
     audio.pause();
 })
+var musicImgs = document.getElementsByClassName("item");
+var audioSource = document.getElementById("audio");
+for (var i = 0; i < musicImgs.length; i++) {
+    musicImgs[i].addEventListener("click", function() {
+        var musicId = this.id;
+        audioSource.src = "mp4/" + musicId + ".mp3";
+        var audioPlayer = document.querySelector("#audio");
+        // document.querySelector("#on").classList.add("off");
+        // document.querySelector("#off").classList.add("off");
+        audioPlayer.load();
+        audioPlayer.play();
+    });
+}
