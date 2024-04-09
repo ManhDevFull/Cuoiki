@@ -16,6 +16,7 @@ html{
 }
 a{text-decoration: none;color: aliceblue;}
 li{list-style: none;}
+h3{font-weight: 525;}
 main{
     position: relative;
     top: 20px;
@@ -99,12 +100,14 @@ input:focus{outline: none;}
 }
 .login a:hover{
     font-size: 16px;
-    color: #7d559ea8;
-    background:linear-gradient(to top, #572652e0, 10% , #4c295000);
+    color: #4339aea8;
+    transition: 0.4s;
+    background:linear-gradient(to bottom, #8a3a82e0, 10% , #321b3500);
 }
 .login a{
     padding: 10px 20px;
-    color: #160823a8;
+    color: #29e3f0a8;
+    background:linear-gradient(to top, #b84daee0, 10% , #4c295000);
     font-size: 16px;
     border-radius: 3px;
     transition: 0.4s;
@@ -261,3 +264,136 @@ audio{
 .off{display: none;}
 .play-music .play{}
 .play-music .voice{}
+
+
+
+
+/* Màn hình đăng kí */
+
+.screenLogIn::after{
+    position: absolute;
+    top: -69px;
+    left: 900px;
+    content: "Close";
+    width: 40px;
+    height: 20px;
+    padding: 5px 10px;
+    padding-left: 14px;
+    border-radius: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0 0 15px #ff0e0eaa;
+    color: rgb(226, 154, 154);
+    background: linear-gradient(to top, #801c2ba5, #ff0e0eaa);
+}
+.screenLogIn{
+    position: absolute;
+    top: 100px;
+    left: 120px;
+    width: 900px;
+    height: 590px;
+    margin: auto;
+    display: flex;
+}
+
+.screenLogIn .rightBgLogIn{
+    box-shadow: 0 0 20px #acd1edc4;
+    filter: blur(2px);
+    width: 450px;
+    height: 590px;
+    position: relative;
+    left: 515px;
+    top: -70px;
+    background-color: #acd1edc4;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.screenLogIn .leftBgLogIn{
+    box-shadow: 0 0 20px #e822226d;
+    filter: blur(2px);
+    width: 450px;
+    height: 590px;
+    left: 65px;
+    top: -70px;
+    position: relative;
+    background: linear-gradient(to left, #2D142A, #e822226d);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.screenLogIn .leftLogIn{
+    position: absolute;
+    top: -50px;
+    left: 90px;
+    width: 450px;
+    height: 590px;
+}
+.screenLogIn .leftLogIn .logo{
+    background-image: linear-gradient(to right, red, blue);
+    -webkit-background-clip: text;
+    font-family: "Bebas Neue", sans-serif;
+    color: transparent;
+    font-size: 30px;
+    position: absolute;
+}
+.screenLogIn .leftLogIn .title{
+    width: 450px;
+    height: 500px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.screenLogIn .rightLogIn{
+    position: absolute;
+    top: -70px;
+    left: 550px;
+    width: 450px;
+    height: 590px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.screenLogIn .rightLogIn{margin-left: -40px;}
+.screenLogIn .rightLogIn h1{
+    font-size: 35px;
+    margin-left: -30px;
+    color: #113c3e;
+}
+.screenLogIn .rightLogIn form i{
+    font-size: 18px;
+    margin-left: 5px;
+}
+.screenLogIn .rightLogIn form button{
+    margin-top: 20px;
+    width: 335px;
+    margin-left: 5px;
+    height: 45px;
+    border: none;
+    border-radius: 7px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(to top, #6f35806d, #272e8f94);
+}
+.screenLogIn .rightLogIn form input{
+    padding-left: 10px;
+    width: 300px;
+    height: 28px;
+    border-radius: 5px;
+    border: none;
+    margin: 5px;
+}
+#save{
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+.screenLogIn .rightLogIn u{
+    position: relative;
+    top: -75px;
+    left: -10px;
+}
+.of{display: none;}

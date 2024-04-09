@@ -55,7 +55,7 @@
         <!-- End Thanh Tìm Kiếm -->
 
         <div class="main">
-            <div class="home">
+            <div class="home wow" data-wow-duration="1s">
                 <div class="home2">
                     <div class="title"><h1>Nhạc mới nhất</h1></div>
                     <div class="slide">
@@ -75,7 +75,7 @@
                             </a>
                         </div>
                         <div class="item" id="chuyen-chung-ta-sau-nay" >
-                            <a href="#top1">
+                            <a href="#">
                                 <img src="image/chuyen-chung-ta-sau-nay.png">
                                 <div class="information">
                                     <i class="far fa-play-circle"></i>
@@ -620,9 +620,9 @@
 <div class="play-music">
     <audio id="audio" src="mp3/tamada.mp3" controls></audio>
     <div class="music">
-        <img id="imgplay" src="image/remix1.jpg" alt="">
-        <div class="name-author" style="margin-top: 7px; margin-left: 5px;">
-            <h3 style="color: white;font-size: 17px;padding-left: 5px;padding-top: 7px;">Name music</h3>
+        <img id="imgplay" src="image/remix1.jpg" alt="Ảnh nhạc">
+        <div class="name-author" id="name-author" style="margin-top: 7px; margin-left: 5px;">
+            <h3 id="name" style="color: white;font-size: 17px;padding-left: 5px;padding-top: 7px;">Name music</h3>
             <marquee style="color: rgb(214, 123, 123);font-size: 12px;border-radius: 15px;">Nghe nhạc chil cùng REMIX.MP3 </marquee>
         </div>
     </div>
@@ -643,6 +643,33 @@
     <div class="voice"></div>
 </div>
 
+
+<!-- Đăng Kí -->
+<div class="screenLogIn of wow fadeIn" data-wow-delay="0.3s" data-wow-duration="0.7s" >
+    <div>
+        <div class="leftBgLogIn" style="position: absolute;"></div>
+        <div class="leftLogIn">
+            <div class="logo" style="width: 100px;">CHILL.MP3</div>
+            <div class="title">
+                <h1 style="color: rgba(43, 223, 214, 0.784);font-size: 30px;">ĐĂNG NHẬP</h1>
+                <p style="color: rgba(43, 223, 214, 0.784);margin-top: 5px;">Vui lòng đăng nhập vào tài khoản của bạn</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="rightBgLogIn"></div>
+            <div class="rightLogIn">
+            <h1>Đăng nhập</h1>
+            <form action="">
+                <p><input type="email" id="email" placeholder="Email" required><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                <p><input type="password" id="password" placeholder="Password" required><i class="fa fa-lock"></i></p>
+                <p><input type="checkbox" id="save">Duy trì đăng nhập</p>
+                <button id="logIn">Đăng nhập</button>
+            </form>
+            <u><b>Nếu bạn chưa có tài khoản. Hãy đăng ký <i class="signUp" onclick="signUp" style="color: rgb(10, 40, 210);">ở đây</i></b></u>
+        </div>
+    </div>
+</div>
 
     
 
