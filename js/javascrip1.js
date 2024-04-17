@@ -1,30 +1,58 @@
+var audioSource = document.getElementById("audio");
 const onlistion = document.querySelector("#on");
 onlistion.addEventListener("click",() => {
     onlistion.classList.add("off");
     document.querySelector("#off").classList.remove("off");
-    let audio = document.querySelector("#audio");
-    audio.play();
+    audioSource.play();
 })
 const offlistion = document.querySelector("#off");
 offlistion.addEventListener("click",() => {
     offlistion.classList.add("off");
     document.querySelector("#on").classList.remove("off");
-    let audio = document.querySelector("#audio");
-    audio.pause();
+    audioSource.pause();
 })
 
 
+// lấy time
+audioSource.addEventListener('loadedmetadata',() => {
+    var outTime = audioSource.duration;
+});
+
+audioSource.addEventListener('timeupdate', () => {
+    var timeMp3 = audioSource.currentTime;
+    var minute = Math.floor( timeMp3 / 60 );
+    var second = Math.floor( timeMp3 % 60 );
+
+    var outTime = audioSource.duration;
+    var outMinute = Math.floor( outTime / 60 );
+    var outSecond = Math.floor( outTime % 60 );
+    document.querySelector(".time").innerText = outMinute + ':' + outSecond + '/' + minute + ':' + second ;
+});
 
 var musicImgs = document.getElementsByClassName("item");
-var audioSource = document.getElementById("audio");
 for (var i = 0; i < musicImgs.length; i++) {
 
     musicImgs[i].addEventListener("click", function() {
         var musicId = this.id;
         audioSource.src = "mp3/" + musicId + ".mp3";
-        var audioPlayer = document.querySelector("#audio");
-        audioPlayer.load();
-        audioPlayer.play();
+        audioSource.load();
+        audioSource.play();
+        vttId = "vtt/" + musicId + ".vtt";
+
+        fetch(vttId)
+        .then(response => response.text())
+        .then(data => {
+          const parser = new DOMParser();
+          const vttDoc = parser.parseFromString(data, 'text/xml');
+          const cues = vttDoc.getElementsByTagName('text');
+
+          const lyricsDiv = document.querySelector('.play');
+          for (let i = 0; i < cues.length; i++) {
+            const cueText = cues[i].innerHTML;
+            lyricsDiv.innerHTML += `<p>${cueText}</p>`;
+            }
+        });
+        
         document.getElementById("imgplay").src = "image/" + musicId + ".png";
         let test1 = document.getElementById("on");
         if(test1.classList == "fas fa-play")
@@ -78,7 +106,49 @@ var logIn = document.querySelector('.login');
 
 // signUp
 
+document.querySelector('.signUp').addEventListener("click",() => {
+    document.querySelector('.rightLogIn').classList.add('fadeOut');
+    document.querySelector('.rightSignUp').classList.remove('fadeIn');
+    document.querySelector('.rightSignUp').classList.remove('fadeIn');
+    document.querySelector('.rightSignUp').classList.remove('fadeOut');
+    document.querySelector('.rightSignUp').classList.remove('fadeOut');
+    document.querySelector('.rightLogIn').classList.remove('fadeOut');
+    document.querySelector('.rightLogIn').classList.remove('fadeOut');
+    document.querySelector('.rightLogIn').classList.remove('fadeIn');
+    document.querySelector('.rightLogIn').classList.remove('fadeIn');
+    setTimeout(() => {
+        document.querySelector('.rightLogIn').style.display = "none";
+        document.querySelector('.rightSignUp').classList.add('fadeIn');
+        document.querySelector('.rightSignUp').style.display = null;},500);
+
+
+
+});
+
+
+
+document.querySelector('.logIn').addEventListener("click",() => {
+    document.querySelector('.rightSignUp').classList.remove('fadeIn');
+    document.querySelector('.rightSignUp').classList.remove('fadeIn');
+    document.querySelector('.rightSignUp').classList.remove('fadeOut');
+    document.querySelector('.rightSignUp').classList.remove('fadeOut');
+    document.querySelector('.rightLogIn').classList.remove('fadeOut');
+    document.querySelector('.rightLogIn').classList.remove('fadeOut');
+    document.querySelector('.rightLogIn').classList.remove('fadeIn');
+    document.querySelector('.rightLogIn').classList.remove('fadeIn');
+    document.querySelector('.rightSignUp').classList.add('fadeOut');
+    setTimeout(() => {
+        document.querySelector('.rightSignUp').style.display = "none";
+        document.querySelector('.rightLogIn').classList.add('fadeIn');
+        document.querySelector('.rightLogIn').style.display = null;},500);
+});
+
 
 
 
 // testPassword
+
+
+
+
+//time mp3
